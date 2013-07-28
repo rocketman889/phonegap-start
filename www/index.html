@@ -3,7 +3,7 @@
   <head>
     <title>Device Properties Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // Wait for device API libraries to load
@@ -12,12 +12,11 @@
 
     document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady() {
-    navigator.geolocation.getCurrentPosition(myPositionSuccess, myPositionError, {maximumAge: 300000, timeout:10000, enableHighAccuracy : true});
-};
+		function onDeviceReady() {
+		    navigator.geolocation.getCurrentPosition(myPositionSuccess, myPositionError, {maximumAge: 300000, timeout:10000, enableHighAccuracy : true});
+		};
 
-    // onSuccess Geolocation
-    //
+    
     function myPositionSuccess(position) {
         var element = document.getElementById('geolocation');
         element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
