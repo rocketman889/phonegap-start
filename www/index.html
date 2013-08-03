@@ -3,7 +3,7 @@
   <head>
     <title>Device Properties Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // Wait for device API libraries to load
@@ -16,7 +16,7 @@
     //
     function onDeviceReady() {
         // Throw an error if no update is received every 30 seconds
-        var options = { timeout: 30000 };
+        var options = { maximumAge: 300000, timeout:10000, enableHighAccuracy : true };
         watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
     }
 
